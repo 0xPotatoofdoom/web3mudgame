@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [M4TT72 | Terminal](https://term.m4tt72.com)
 
-## Getting Started
+A terminal style website
 
-First, run the development server:
+![screenshot](/docs/screenshot.png)
+
+## why?
+
+TL;DR: why not?
+
+I'm a Linux enthusiast, and I tried creating something that will allow 'normal' people to have a glimpse at my world.
+
+## Quick Start
+
+### Using docker (recommended)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+docker run -d --name terminal -p 3000:3000 m4tt72/terminal
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If you want to run with custom configuration, make sure you have a copy of `config.json` then mount in the container:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+docker run -d \
+  --name terminal \
+  -p 3000:3000 \
+  -v `pwd`/config.json:/data/config.json \
+  m4tt72/terminal
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Using npm/yarn
 
-## Learn More
+1. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+yarn install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Build the project:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+yarn build
+```
 
-## Deploy on Vercel
+3. Run the server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+yarn start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Configuration
+
+Here's a sample of the `config.json` file:
+
+```json
+{
+  "bioUrl": "https://raw.githubusercontent.com/m4tt72/m4tt72/master/README.md",
+  "social": {
+    "instagram": "m4tt72",
+    "github": "m4tt72",
+    "linkedin": "yassinefathi"
+  },
+  "theme": "gruvboxdark" // list of themes available in themes.json
+}
+```
+
+## Themes
+
+![themes](/docs/screenshot.gif)
+
+[Here's](/docs/themes) a list of available themes.
+
+
+## Contributing
+
+Please feel free to pull requests or log issues.
+
+Thanks!
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=m4tt72/terminal&type=Date)](https://star-history.com/#m4tt72/terminal&Date)
