@@ -1,4 +1,4 @@
-# [M4TT72 | Terminal](https://term.m4tt72.com)
+# [M4TT72 | Terminal](https://term.web3mud.game)
 
 A terminal style website
 

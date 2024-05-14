@@ -1,19 +1,11 @@
 {
-  "name": "terminal",
-  "version": "2.17.0",
+  "name": "web3mud.game",
+  "version": "1.0.0",
   "license": "MIT",
   "author": {
-    "name": "Yassine Fathi",
-    "url": "https://m4tt72.com",
-    "email": "hi@m4tt72.com"
-  },
-  "funding": {
-    "type": "Paypal",
-    "url": "https://paypal.me/yfthi"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/m4tt72/terminal"
+    "name": "Lionel",
+    "url": "https://web3mud.game",
+    "email": "hi@web3mud.game"
   },
   "scripts": {
     "start": "next start",

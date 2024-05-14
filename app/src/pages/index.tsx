@@ -25,7 +25,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
   return (
     <>
       <Head>
-        <title>M4TT72 | Home</title>
+        <title>Web3MUD.Game | Home</title>
       </Head>
 
       <div
