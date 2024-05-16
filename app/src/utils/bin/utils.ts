@@ -14,14 +14,23 @@ export const whoami = async (_args: string[]): Promise<string> => {
   return 'guest';
 };
 
+export const bank = async (_args: string[]): Promise<string> => {
+  return 'Under Construction';
+};
+
 export const date = async (_args: string[]): Promise<string> => {
   return new Date().toString();
 };
 
-export const gui = async (_args: string[]): Promise<string> => {
-  window.open('https://web3mud.game', '_self');
+export const infrastructure = async (_args: string[]): Promise<string> => {
+  window.open('https://opsec.computer', '_self');
 
-  return 'Opening GUI version...';
+  return 'Accessing decentralized I/O';
+};
+
+export const opsecInfo = async (_args: string[]): Promise<string> => {
+  const message = "opsec.computer provides decentralized infrastructure as a service. We empower the next generation of web3 builders with DePIN and AI, enabling secure, scalable, and innovative solutions.";
+  return message;
 };
 
 export const email = async (_args: string[]): Promise<string> => {
