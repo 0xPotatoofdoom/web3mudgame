@@ -3,3 +3,4 @@ export * from './utils';
 export * from './weather';
 export * from './neofetch';
 export * from './cowsay';
+export * from './askChatGPT';
