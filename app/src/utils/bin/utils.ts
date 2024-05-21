@@ -76,7 +76,7 @@ export const tutorial = async (_args?: string[]): Promise<string> => {
   1. Type 'learn' to explore educational modules.
   2. Type 'defi' to learn more about DeFi functionalities.
   3. Type 'roadmap' to learn more about our development roadmap.
-  4. Type 'contact' to get in touch with us.
+  4. You can also always ask Nordnev for more help at any time.
   `;
 };
 
