@@ -113,10 +113,3 @@ export const roadmap = async (_args?: string[]): Promise<string> => {
   Stay tuned for updates and new features by typing 'subscribe' after registering.
   `;
 };
-
-// ChatGPT integration command
-export const askChatGPTCommand = async (args: string[]): Promise<string> => {
-  const question = args.join(' ');
-  const answer = await askChatGPT(question);  // Call the function from the API file
-  return answer;
-};
