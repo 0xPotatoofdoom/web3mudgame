@@ -4,6 +4,10 @@ import { Layout } from '../components/layout';
 import '../styles/global.css';
 import { ShellProvider } from '../utils/shellProvider';
 import { ThemeProvider } from '../utils/themeProvider';
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 const isTrackingEnabled = process.env.NEXT_PUBLIC_ENABLE_TRACKING === 'true';
 const trackingUrl = process.env.NEXT_PUBLIC_TRACKING_URL;

@@ -8,21 +8,23 @@
     "email": "hi@web3mud.game"
   },
   "scripts": {
-    "start": "next start",
+    "start": "next start -p 4000",
     "build": "next build",
     "dev": "next dev",
     "export": "next export",
-    "lint": "next lint",
-    "prepare": "husky install"
+    "lint": "next lint"
   },
   "dependencies": {
     "axios": "^1.6.2",
     "cowsay-browser": "^1.1.8",
     "date-fns": "^3.0.6",
+    "dotenv": "^16.4.5",
     "next": "^14.0.4",
+    "openai": "^4.47.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-icons": "^4.12.0"
+    "react-icons": "^4.12.0",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.0.4",
@@ -35,7 +37,6 @@
     "eslint-config-next": "^14.0.4",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "husky": "^8.0.3",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "tailwindcss": "^3.4.0",
