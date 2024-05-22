@@ -70,3 +70,76 @@ export const banner = (_args?: string[]): string => {
 Type 'help' to see list of available commands.
 `;
 };
+
+export const login = async (_args?: string[]): Promise<string> => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    return 'You already logged in!';
+  } else {
+    const email = _args[0];
+    if (!email) {
+      return 'Login cancelled: email is required.';
+    }
+
+    const password = _args[1];
+    if (!password) {
+      return 'Login cancelled: password is required.';
+    }
+
+    try {
+      const response = await fetch('http://localhost:443/api/auth/login/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Login failed: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      localStorage.setItem('token', data.token);
+      return `Login successful. Your token is: ${data.token}`;
+    } catch (error) {
+      return error.message;
+    }
+  }
+};
+
+export const logout = async (_args?: string[]): Promise<string> => {
+  localStorage.removeItem('token');
+  return 'You logged out!';
+};
+
+export const register = async (_args?: string[]): Promise<string> => {
+  const email = _args[0];
+  if (!email) {
+    return 'Register cancelled: email is required.';
+  }
+
+  const password = _args[1];
+  if (!password) {
+    return 'Register cancelled: password is required.';
+  }
+
+  try {
+    const response = await fetch('http://localhost:443/api/auth/register/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Register failed: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data.message;
+  } catch (error) {
+    return `Registration error: ${error.message}`;
+  }
+};
