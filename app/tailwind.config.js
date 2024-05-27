@@ -8,6 +8,7 @@ const config = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+      black: '#000',
     },
     extend: {},
   },
@@ -17,4 +18,4 @@ const config = {
   plugins: [],
 };
 
-module.exports = config;
+export default config;

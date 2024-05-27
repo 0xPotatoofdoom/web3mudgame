@@ -16,10 +16,6 @@ const trackingWebsiteId = process.env.NEXT_PUBLIC_TRACKING_SITE_ID;
 const App = ({ Component, pageProps }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
-  const onClickAnywhere = () => {
-    inputRef.current.focus();
-  };
-
   useEffect(() => {
     localStorage.setItem('visitedAt', new Date().toString());
   }, []);
@@ -43,7 +39,7 @@ const App = ({ Component, pageProps }) => {
           )}
         </Head>
 
-        <Layout onClick={onClickAnywhere}>
+        <Layout>
           <Component {...pageProps} inputRef={inputRef} />
         </Layout>
       </ShellProvider>

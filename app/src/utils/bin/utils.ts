@@ -29,12 +29,13 @@ export const infrastructure = async (_args: string[]): Promise<string> => {
 };
 
 export const opsecInfo = async (_args: string[]): Promise<string> => {
-  const message = "opsec.computer provides decentralized infrastructure as a service. We empower the next generation of web3 builders with DePIN and AI, enabling secure, scalable, and innovative solutions.";
+  const message =
+    'opsec.computer provides decentralized infrastructure as a service. We empower the next generation of web3 builders with DePIN and AI, enabling secure, scalable, and innovative solutions.';
   return message;
 };
 
 export const opsecNode = async (_args: string[]): Promise<string> => {
-  const message = "Start an Opsec powered Node for your desired chain.";
+  const message = 'Start an Opsec powered Node for your desired chain.';
   return message;
 };
 
@@ -112,35 +113,9 @@ export const logout = async (_args?: string[]): Promise<string> => {
 };
 
 export const register = async (_args?: string[]): Promise<string> => {
-  const email = _args[0];
-  if (!email) {
-    return 'Register cancelled: email is required.';
-  }
-
-  const password = _args[1];
-  if (!password) {
-    return 'Register cancelled: password is required.';
-  }
-
-  try {
-    const response = await fetch('http://localhost:443/api/auth/register/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`Register failed: ${response.statusText}`);
-    }
-
-    const data = await response.json();
-    return data.message;
-  } catch (error) {
-    return `Registration error: ${error.message}`;
-  }
+  return '';
 };
+
 export const tutorial = async (_args?: string[]): Promise<string> => {
   return `
   Welcome to Web3MUD.Game!
